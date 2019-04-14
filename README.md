@@ -11,7 +11,7 @@ This repository is my university project for the Database Applications Course. I
 
 ## Tasks list:
 - [x] 14/04/19 - diagram for the database structure as well as info about the app models created with [Draw.io](https://www.draw.io/)
-- [ ]create database on university's server
+- [ ] create database on university's server
 - [ ] create relations between database tables 
 - [ ] mock data into the database
 - [ ] model classes for the java app
