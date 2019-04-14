@@ -57,6 +57,7 @@
 -- create table Items(
 --   id integer primary key identity,
 --   typeId integer,
+--   itemId integer,
 --   FOREIGN KEY (typeId) REFERENCES ItemTypes(id)
 -- );
 
@@ -123,3 +124,20 @@
 --   FOREIGN KEY (directorId) REFERENCES Directors(id),
 --   FOREIGN KEY (genreId) REFERENCES Genres(id)
 -- );
+
+-- /// Insert genres, publishers
+----------------------------------------
+-- insert into Genres values
+-- ('action'),
+-- ('comedy'),
+-- ('horror'),
+-- ('scifi')
+-- go
+
+-- insert into Publishers values
+-- ('Warsaw Books'),
+-- ('Claroscuro Publishing House'),
+-- ('Agora'),
+-- ('Science Publishers')
+-- go
+
