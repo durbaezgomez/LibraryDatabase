@@ -10,7 +10,7 @@ This repository is my university project for the Database Applications Course. I
 - Users can: borrow items from the library, manage their own accounts, create their own accounts
 
 ## DONE: 
-- diagram for the database structure as well as info about the app models created with [Draw.io](https://www.draw.io/) on 14/04/19
+- 14/04/19 - diagram for the database structure as well as info about the app models created with [Draw.io](https://www.draw.io/)
 ## TODO:
 - create database on university's server
 - create relations between database tables 
