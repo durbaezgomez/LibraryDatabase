@@ -14,6 +14,7 @@ This repository is my university project for the Database Applications Course. I
 - [x] 14/04/19 - create database on university's server
 - [x] 14/04/19 - create relations between database tables 
 - [x] 14/04/19 - mock data into the database
+- [x] 15/04/19 - create and assign triggers on insert and delete for Items in database
 - [ ] model classes for the java app
 - [ ] establish the app/database connection
 - [ ] test the app/database connection
