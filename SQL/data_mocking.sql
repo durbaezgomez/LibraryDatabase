@@ -2,6 +2,22 @@ truncate table Books
 truncate table Magazines
 truncate table Films
 
+-- /// Mock genres, publishers
+----------------------------------------
+insert into Genres values
+('action'),
+('comedy'),
+('horror'),
+('scifi')
+go
+
+insert into Publishers values
+('Warsaw Books'),
+('Claroscuro Publishing House'),
+('Agora'),
+('Science Publishers')
+go
+
 -- /// Mock Authors Table data
 ----------------------------------------
 insert into Authors (name, surname) values ('Gabriele', 'Cottom');

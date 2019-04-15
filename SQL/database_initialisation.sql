@@ -125,19 +125,4 @@ create table Films(
   FOREIGN KEY (genreId) REFERENCES Genres(id)
 );
 
--- /// Insert genres, publishers
-----------------------------------------
-insert into Genres values
-('action'),
-('comedy'),
-('horror'),
-('scifi')
-go
-
-insert into Publishers values
-('Warsaw Books'),
-('Claroscuro Publishing House'),
-('Agora'),
-('Science Publishers')
-go
 
