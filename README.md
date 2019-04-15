@@ -35,6 +35,6 @@ This repository is my university project for the Database Applications Course. I
 - [ ] combine fxml with existing Java system
 - [ ] debug, test all functionalities
 
-### Additinal improvements:
+### Additional improvements:
 - [ ] user password hashing
 - [ ] 2-step admin authentication when trying to overwrite the database
