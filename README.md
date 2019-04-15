@@ -28,13 +28,13 @@ This repository is my university project for the Database Applications Course. I
 - [ ] admin and user accounts existing, able to perform the previously mentioned tasks
 - [ ] console app only
 
-### FINAL PRODUCT:
+### Final Product:
 - [ ] added functionality for the user to create and delete own account
 - [ ] design GUI
 - [ ] implement .xd designs in JavaFX
 - [ ] combine fxml with existing Java system
 - [ ] debug, test all functionalities
 
-### ADDITIONAL IMPROVEMENTS:
+### Additinal improvements:
 - [ ] user password hashing
 - [ ] 2-step admin authentication when trying to overwrite the database
