@@ -124,5 +124,3 @@ create table Films(
   FOREIGN KEY (directorId) REFERENCES Directors(id),
   FOREIGN KEY (genreId) REFERENCES Genres(id)
 );
-
-
