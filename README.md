@@ -15,24 +15,22 @@ This repository is my university project for the Database Applications Course. I
 - [x] 14/04/19 - create relations between database tables 
 - [x] 14/04/19 - mock data into the database
 - [x] 15/04/19 - create and assign triggers on insert and delete for Items in database
-- [ ] model classes for the java app
+- [x] 28/04/19 - define basic user functionalities (login, logout)
+- [ ] model classes for data access, management and storage
 - [ ] establish and test the app/database connection
-- [ ] define basic user functionalities (login, logout, show database content for user)
-- [ ] implement console menu to test functionalities
-- [ ] define admin functionalities (manage & update database)
-- [ ] update console menu
+- [ ] define next user functionalities (show database content for user, filter data by sending personalised query)
+- [ ] define next admin functionalities (manage & update database users)
+- [ ] define next admin functionalities (manage & update database items, alter entities)
+- [ ] define next admin functionalities (manage lending items and updating borrowedLogs entity)
 
 ### MVP: 
 - [ ] app/database connection established
 - [ ] models in the app created
-- [ ] admin and user accounts existing, able to perform the previously mentioned tasks
-- [ ] console app only
+- [ ] admin and user accounts existing, able to perform previously mentioned tasks
+- [ ] design GUI
 
 ### Final Product:
 - [ ] added functionality for the user to create and delete own account
-- [ ] design GUI
-- [ ] implement .xd designs in JavaFX
-- [ ] combine fxml with existing Java system
 - [ ] debug, test all functionalities
 
 ### Additional improvements:
