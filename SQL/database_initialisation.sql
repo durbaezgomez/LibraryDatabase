@@ -15,6 +15,17 @@ create table SystemUsers(
   FOREIGN KEY (accountTypeId) REFERENCES AccountTypes(id)
 );
 
+--  TO DO -> BORROWED LOGS DO STWORZENIA W BAZIE
+create table BorrowedLogs(
+  id integer primary key identity,
+  userId integer,
+  itemId integer,
+  dateStart date,
+  dateEnd date,
+  FOREIGN KEY (userId) REFERENCES SystemUsers(id),
+  FOREIGN KEY (itemId) REFERENCES Items(id)
+)
+
 
 -- /// Insert 1 admin and 1 user
 ----------------------------------------

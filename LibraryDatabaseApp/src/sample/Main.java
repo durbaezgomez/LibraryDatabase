@@ -17,7 +17,6 @@ public class Main extends Application {
     public static final String ANSI_GREEN = "\u001B[32m";
 
 
-
     @Override
     public void start(Stage primaryStage) throws Exception{
 
@@ -25,10 +24,6 @@ public class Main extends Application {
         primaryStage.setTitle("Library Database App");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
-
-        LoginController loginController = new LoginController();
-
-        loginController.authenticateLogin();
 
         TryConnecting();
 

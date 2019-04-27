@@ -2,3 +2,6 @@
 *.xml
 *.iml
 LibraryDatabaseApp/src/.DS_Store
+*.kotlin_module
+*.class
+*.class
