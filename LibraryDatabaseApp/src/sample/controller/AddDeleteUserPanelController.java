@@ -1,7 +1,6 @@
-package sample;
+package sample.controller;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -10,13 +9,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AdminPanelController {
+public class AddDeleteUserPanelController {
 
-    @FXML
-    public void logout(ActionEvent event) throws IOException {
+    public void mainPanel(ActionEvent event) throws IOException {
 
 
-        Parent mainScreenParent = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent mainScreenParent = FXMLLoader.load(getClass().getResource("/sample/view/adminPanel.fxml"));
         Scene mainScreenScene = new Scene(mainScreenParent);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -24,4 +22,5 @@ public class AdminPanelController {
         window.setScene(mainScreenScene);
         window.show();
     }
+
 }

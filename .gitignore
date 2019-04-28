@@ -5,3 +5,5 @@ LibraryDatabaseApp/src/.DS_Store
 *.kotlin_module
 *.class
 *.class
+LibraryDatabaseApp/.DS_Store
+*.class

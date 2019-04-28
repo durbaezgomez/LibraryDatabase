@@ -1,4 +1,4 @@
-package sample;
+package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +16,7 @@ public class UserPanelController {
     public void logout(ActionEvent event) throws IOException {
 
 
-        Parent mainScreenParent = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent mainScreenParent = FXMLLoader.load(getClass().getResource("/sample/view/login.fxml"));
         Scene mainScreenScene = new Scene(mainScreenParent);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

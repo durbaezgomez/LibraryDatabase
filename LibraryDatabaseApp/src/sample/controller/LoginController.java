@@ -1,4 +1,4 @@
-package sample;
+package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +11,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import static sample.Main.*;
+
 import java.io.IOException;
 
 public class LoginController {
@@ -22,12 +24,12 @@ public class LoginController {
 
     private int accountType = 0;
 
-
-    @FXML
     public void changeScreenAfterLogin(ActionEvent event) throws IOException{
 
         if(authenticateLogin()&& accountType == 1){
-            Parent mainScreenParent = FXMLLoader.load(getClass().getResource("adminPanel.fxml"));
+            System.out.println(ANSI_GREEN + "SUCCESSFULLY LOGGED IN AS ADMIN" + ANSI_RESET);
+
+            Parent mainScreenParent = FXMLLoader.load(getClass().getResource("/sample/view/adminPanel.fxml"));
             Scene mainScreenScene = new Scene(mainScreenParent);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -35,8 +37,11 @@ public class LoginController {
             window.setScene(mainScreenScene);
             window.show();
         }
-        else if(authenticateLogin()&& accountType == 0){
-            Parent mainScreenParent = FXMLLoader.load(getClass().getResource("userPanel.fxml"));
+        else if(authenticateLogin()&& accountType == 2){
+
+            System.out.println(ANSI_GREEN + "SUCCESSFULLY LOGGED IN AS USER" + ANSI_RESET);
+
+            Parent mainScreenParent = FXMLLoader.load(getClass().getResource("/sample/view/userPanel.fxml"));
             Scene mainScreenScene = new Scene(mainScreenParent);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -52,29 +57,21 @@ public class LoginController {
 
     }
 
-    public Boolean authenticateLogin(){
+    private Boolean authenticateLogin() {
 
         String login = input_login.getText();
         String passwd = input_passwd.getText();
 
-        if(login.equals("admin1") && passwd.equals("admin1")){
-            accountType = 1;
-            System.out.println(Main.ANSI_GREEN + "SUCCESSFULLY LOGGED IN AS ADMIN" + Main.ANSI_RESET);
-            return true;
-        }
-        else if(login.equals("user1") && passwd.equals("user1")){
-            accountType = 0;
-            System.out.println(Main.ANSI_GREEN + "SUCCESSFULLY LOGGED IN AS USER" + Main.ANSI_RESET);
-            return true;
-        }
-        else{
-            return false;
-        }
+        for(int i = 0; i < systemUsers.size(); i++) {
+            if (login.equals(systemUsers.get(i).login) && passwd.equals(systemUsers.get(i).passwd)) {
 
+                accountType = systemUsers.get(i).accountTypeId;
+                return true;
 
+            }
+        }
+        return false;
     }
-
-
 
 
 }
