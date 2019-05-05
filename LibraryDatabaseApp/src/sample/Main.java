@@ -5,10 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.model.LogRecord;
 import sample.model.SystemUser;
+import sample.util.CredentialsUtil;
 import sample.util.DBUtil;
+import sample.util.FXMLSceneController;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main extends Application {
@@ -17,23 +21,21 @@ public class Main extends Application {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";
 
-    public static ArrayList<SystemUser> systemUsers = new ArrayList<SystemUser>();
+    public static List<SystemUser> systemUsers = new ArrayList<SystemUser>();
+    public static List<LogRecord> logInfo = new ArrayList<LogRecord>();
+
+    public static DBUtil dbUtil = new DBUtil();
+    public static CredentialsUtil cUtil = new CredentialsUtil();
+    public static FXMLSceneController fxmlController = new FXMLSceneController();
 
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("view/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/view/login.fxml"));
         primaryStage.setTitle("Library Database App");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
-
-
-        DBUtil dbUtil = new DBUtil();
-        dbUtil.dbConnect();
-
-        dbUtil.getUserCredentials();
-
 
     }
 

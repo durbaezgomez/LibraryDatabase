@@ -58,6 +58,8 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button layoutX="271.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDeleteUser" text="Add / Delete user" AnchorPane.leftAnchor="271.0" AnchorPane.topAnchor="14.0" />
+      <Button layoutX="233.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addUserPanel" text="Add user" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="14.0" />
+      <Button layoutX="324.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteUserPanel" text="Delete user" />
+      <Button layoutX="422.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editUserPanel" text="Edit user" />
    </children>
 </AnchorPane>

@@ -1,38 +1,60 @@
 package sample.controller;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TreeTableColumn;
+import sample.model.LogRecord;
+
+import static sample.Main.*;
+
 
 import java.io.IOException;
+import java.sql.SQLException;
 
-public class AdminPanelController {
+public class AdminPanelController implements Initializable {
 
-    public void logout(ActionEvent event) throws IOException {
+    @FXML private TreeTableColumn<LogRecord, Integer> logIdCol;
+    @FXML private TreeTableColumn<LogRecord, String> logDateCol;
+    @FXML private TreeTableColumn<LogRecord, String> logTimeCol;
+    @FXML private TreeTableColumn<LogRecord, String> logUserCol;
+
+    @Override
+    public void initialize(java.net.URL location, java.util.ResourceBundle resources){
 
 
-        Parent mainScreenParent = FXMLLoader.load(getClass().getResource("/sample/view/login.fxml"));
-        Scene mainScreenScene = new Scene(mainScreenParent);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(mainScreenScene);
-        window.show();
     }
 
-    public void addDeleteUser(ActionEvent event) throws IOException {
+    public void logout(ActionEvent event) throws IOException, SQLException {
 
+        dbUtil.dbDisconnect();
+        fxmlController.changeScene(event, "login.fxml");
 
-        Parent mainScreenParent = FXMLLoader.load(getClass().getResource("/sample/view/addDeleteUserPanel.fxml"));
-        Scene mainScreenScene = new Scene(mainScreenParent);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(mainScreenScene);
-        window.show();
     }
-    
+
+    public void addUserPanel(ActionEvent event) throws IOException {
+
+        fxmlController.changeScene(event, "addUserPanel.fxml");
+
+    }
+
+    public void deleteUserPanel(ActionEvent event) throws IOException {
+
+        fxmlController.changeScene(event, "deleteUserPanel.fxml");
+
+
+    }
+
+    public void editUserPanel(ActionEvent event) throws IOException {
+
+        fxmlController.changeScene(event, "editUserPanel.fxml");
+
+    }
+
+
+
+
+
 }

@@ -17,9 +17,9 @@
          </font>
       </Text>
       <Button layoutX="517.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
-      <TabPane layoutX="28.0" layoutY="48.0" prefHeight="318.0" prefWidth="541.0" style="-fx-background-color: ECDD87;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="48.0">
+      <TabPane fx:id="tabPane" layoutX="28.0" layoutY="48.0" prefHeight="318.0" prefWidth="541.0" style="-fx-background-color: ECDD87;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="48.0">
         <tabs>
-          <Tab text="Users">
+          <Tab fx:id="usersTab" text="Users">
                <content>
                   <TreeTableView prefHeight="200.0" prefWidth="200.0">
                     <columns>
@@ -35,10 +35,10 @@
                <content>
                   <TreeTableView prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                      <TreeTableColumn prefWidth="65.0" text="No" />
-                      <TreeTableColumn prefWidth="157.0" text="Date" />
-                        <TreeTableColumn minWidth="0.0" prefWidth="111.0" text="Hour" />
-                        <TreeTableColumn minWidth="0.0" prefWidth="205.0" text="Login" />
+                      <TreeTableColumn fx:id="logIdCol" prefWidth="65.0" text="No" />
+                      <TreeTableColumn fx:id="logDateCol" prefWidth="157.0" text="Date" />
+                        <TreeTableColumn fx:id="logTimeCol" minWidth="0.0" prefWidth="111.0" text="Hour" />
+                        <TreeTableColumn fx:id="logUserCol" minWidth="0.0" prefWidth="205.0" text="Login" />
                     </columns>
                   </TreeTableView>
                </content>
@@ -58,6 +58,8 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button layoutX="271.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDeleteUser" text="Add / Delete user" AnchorPane.leftAnchor="271.0" AnchorPane.topAnchor="14.0" />
+      <Button layoutX="233.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addUserPanel" text="Add user" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="14.0" />
+      <Button layoutX="324.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteUserPanel" text="Delete user" />
+      <Button layoutX="422.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editUserPanel" text="Edit user" />
    </children>
 </AnchorPane>

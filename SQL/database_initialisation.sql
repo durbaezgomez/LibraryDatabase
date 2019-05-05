@@ -27,6 +27,8 @@ create table BorrowedLogs(
 )
 
 
+
+
 -- /// Insert 1 admin and 1 user
 ----------------------------------------
 insert into AccountTypes values

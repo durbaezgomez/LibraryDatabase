@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF09C;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EditUserPanelController">
+    <children>
+        <Text layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit user" AnchorPane.bottomAnchor="353.09375" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="339.62109375" AnchorPane.topAnchor="13.9296875">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Text>
+        <Button layoutX="294.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mainPanel" text="Back" AnchorPane.leftAnchor="294.0" AnchorPane.topAnchor="17.0" />
+        <Button fx:id="editUser" layoutX="419.0" layoutY="321.0" mnemonicParsing="false" onAction="#editUser" text="Edit user" />
+        <Label fx:id="infoLabel" layoutX="294.0" layoutY="260.0" text=" " />
+        <TextField fx:id="adminLogin" layoutX="419.0" layoutY="238.0" promptText="admin login" />
+        <PasswordField fx:id="adminPasswd" layoutX="419.0" layoutY="281.0" promptText="admin password" />
+        <ListView fx:id="userView" layoutX="41.0" layoutY="78.0" prefHeight="270.0" prefWidth="220.0" />
+        <Label fx:id="userToEdit" layoutX="294.0" layoutY="78.0" text="User to edit" />
+      <TextField fx:id="newPassword" layoutX="294.0" layoutY="116.0" promptText="new password" />
+      <RadioButton layoutX="293.0" layoutY="164.0" mnemonicParsing="false" text="Admin ">
+         <toggleGroup>
+            <ToggleGroup fx:id="accountType" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="293.0" layoutY="200.0" mnemonicParsing="false" text="User" toggleGroup="$accountType" />
+    </children>
+</AnchorPane>

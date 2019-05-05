@@ -18,4 +18,16 @@ public class SystemUser {
         accountTypeId = UseraccountTypeId;
     }
 
+    @Override
+    public String toString() {
+        String s = "";
+        s += id +"\n";
+        s += login +"\n";
+        s += passwd +"\n";
+        s += name +"\n";
+        s += surname +"\n";
+        s += accountTypeId +"\n";
+
+        return s;
+    }
 }
