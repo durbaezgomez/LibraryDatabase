@@ -15,9 +15,9 @@ This repository is my university project for the Database Applications Course. I
 - [x] 14/04/19 - create relations between database tables 
 - [x] 14/04/19 - mock data into the database
 - [x] 15/04/19 - create and assign triggers on insert and delete for Items in database
-- [x] 28/04/19 - define basic user functionalities (login, logout)
+- [x] 27/04/19 - define basic user functionalities (login, logout)
+- [x] 28/04/19 - establish and test the app/database connection
 - [ ] model classes for data access, management and storage
-- [ ] establish and test the app/database connection
 - [ ] define next user functionalities (show database content for user, filter data by sending personalised query)
 - [ ] define next admin functionalities (manage & update database users)
 - [ ] define next admin functionalities (manage & update database items, alter entities)
