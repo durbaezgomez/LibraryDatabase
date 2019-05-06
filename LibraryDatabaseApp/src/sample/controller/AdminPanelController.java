@@ -1,11 +1,12 @@
 package sample.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import sample.model.LogRecord;
 
 import static sample.Main.*;
@@ -16,15 +17,23 @@ import java.sql.SQLException;
 
 public class AdminPanelController implements Initializable {
 
-    @FXML private TreeTableColumn<LogRecord, Integer> logIdCol;
-    @FXML private TreeTableColumn<LogRecord, String> logDateCol;
-    @FXML private TreeTableColumn<LogRecord, String> logTimeCol;
-    @FXML private TreeTableColumn<LogRecord, String> logUserCol;
+    @FXML private TableView logTable;
+    @FXML private TableColumn logId;
+    @FXML private TableColumn logDate;
+    @FXML private TableColumn logTime;
+    @FXML private TableColumn logUser;
+
+    private ObservableList<LogRecord> logsData;
 
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources){
 
+        logsData = FXCollections.observableArrayList(logInfo);
+        setLogTable();
 
+//        logInfo.forEach(log ->{
+//         System.out.println(log);
+//        });
     }
 
     public void logout(ActionEvent event) throws IOException, SQLException {
@@ -53,8 +62,18 @@ public class AdminPanelController implements Initializable {
 
     }
 
+    private void setLogTable(){
 
+        logTable.setEditable(true);
 
+        logId.setCellValueFactory(new PropertyValueFactory<>("logId"));
+        logDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        logTime.setCellValueFactory(new PropertyValueFactory<>("time"));
+        logUser.setCellValueFactory(new PropertyValueFactory<>("userLogin"));
+
+        logTable.setItems(logsData);
+
+    }
 
 
 }

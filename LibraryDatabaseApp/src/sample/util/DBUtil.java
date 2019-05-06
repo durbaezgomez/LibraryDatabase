@@ -31,7 +31,7 @@ public class DBUtil {
         }
     }
 
-    public static void dbDisconnect() throws SQLException {
+    public void dbDisconnect() throws SQLException {
         try {
             if (con != null && !con.isClosed()) {
                 con.close();
@@ -135,12 +135,27 @@ public class DBUtil {
             userId = Integer.valueOf(queryResult.getString(3));
 
             date = dateTemp.substring(0,10);
-            time = dateTemp.substring(11,15);
+            time = dateTemp.substring(11,16);
 
-            logInfo.add( new LogRecord(id, date, time, userId));
+            logInfo.add(new LogRecord(id, date, time, userId));
         }
 
-        System.out.println(logInfo);
+//        System.out.println(logInfo);
+    }
+
+    public String getUserLogin(int userId) throws SQLException{
+
+        String userLogin = "";
+
+        Statement query = con.createStatement();
+        String sql="select login from SystemUsers where id = "+ userId;
+        ResultSet queryResult= query.executeQuery(sql);
+
+        while(queryResult.next()) {
+            userLogin = queryResult.getString(1);
+        }
+
+        return userLogin;
     }
 
 }
