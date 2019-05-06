@@ -3,6 +3,8 @@ import java.sql.*;
 
 import static sample.Main.*;
 
+import sample.model.Book;
+import sample.model.Film;
 import sample.model.LogRecord;
 import sample.model.SystemUser;
 
@@ -156,6 +158,56 @@ public class DBUtil {
         }
 
         return userLogin;
+    }
+
+
+//    USER PANEL GETTERS
+
+    public void getBooksData() throws SQLException{
+
+        Statement query = con.createStatement();
+        String sql="select Books.id, title, A.surname, edition, year, P.name from Books\n" +
+                "join Authors A on Books.authorId = A.id\n" +
+                "join Publishers P on Books.publisherId = P.id";
+        ResultSet queryResult= query.executeQuery(sql);
+
+        int id, edition, year = 0;
+        String title, author, publisher = "";
+
+        while(queryResult.next()) {
+
+            id = Integer.valueOf(queryResult.getString(1));
+            title = (queryResult.getString(2));
+            author = (queryResult.getString(3));
+            edition = Integer.valueOf(queryResult.getString(4));
+            year = Integer.valueOf(queryResult.getString(5));
+            publisher = (queryResult.getString(6));
+
+            booksData.add(new Book(id, title, author, edition, year, publisher));
+        }
+    }
+
+    public void getFilmsData() throws SQLException{
+
+        Statement query = con.createStatement();
+        String sql="select Films.id, title, D.surname as director, year, G.genre as genre from Films\n" +
+                "join Directors D on Films.directorId = D.id\n" +
+                "join Genres G on Films.genreId = G.id";
+        ResultSet queryResult= query.executeQuery(sql);
+
+        int id, year = 0;
+        String title, director, genre = "";
+
+        while(queryResult.next()) {
+
+            id = Integer.valueOf(queryResult.getString(1));
+            title = (queryResult.getString(2));
+            director = (queryResult.getString(3));
+            year = Integer.valueOf(queryResult.getString(4));
+            genre = (queryResult.getString(5));
+
+            filmsData.add(new Film(id, title, director, year, genre));
+        }
     }
 
 }

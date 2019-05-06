@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.model.Book;
+import sample.model.Film;
 import sample.model.LogRecord;
 import sample.model.SystemUser;
 import sample.util.CredentialsUtil;
@@ -23,6 +25,10 @@ public class Main extends Application {
 
     public static List<SystemUser> systemUsers = new ArrayList<SystemUser>();
     public static List<LogRecord> logInfo = new ArrayList<LogRecord>();
+    public static List<Book> booksData = new ArrayList<Book>();
+    public static List<Film> filmsData = new ArrayList<Film>();
+
+
 
     public static DBUtil dbUtil = new DBUtil();
     public static CredentialsUtil cUtil = new CredentialsUtil();
@@ -38,6 +44,9 @@ public class Main extends Application {
         primaryStage.show();
 
         dbUtil.getLogInfo();
+        dbUtil.getBooksData();
+        dbUtil.getFilmsData();
+
 
 
     }

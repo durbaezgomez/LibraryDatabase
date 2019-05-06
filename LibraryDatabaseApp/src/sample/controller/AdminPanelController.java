@@ -31,9 +31,6 @@ public class AdminPanelController implements Initializable {
         logsData = FXCollections.observableArrayList(logInfo);
         setLogTable();
 
-//        logInfo.forEach(log ->{
-//         System.out.println(log);
-//        });
     }
 
     public void logout(ActionEvent event) throws IOException, SQLException {
@@ -52,7 +49,6 @@ public class AdminPanelController implements Initializable {
     public void deleteUserPanel(ActionEvent event) throws IOException {
 
         fxmlController.changeScene(event, "deleteUserPanel.fxml");
-
 
     }
 
