@@ -56,6 +56,16 @@ public class UserPanelController implements Initializable {
 
     }
 
+    @FXML
+    public void goToSearchView(ActionEvent event) throws IOException, SQLException {
+
+        dbUtil.seeBorrowedProc();
+
+        fxmlController.changeScene(event, "searchView.fxml");
+
+    }
+
+
     public void setBooksTable() {
 
         booksTable.setEditable(true);

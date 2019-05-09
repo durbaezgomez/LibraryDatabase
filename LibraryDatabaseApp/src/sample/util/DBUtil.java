@@ -1,12 +1,11 @@
 package sample.util;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import static sample.Main.*;
 
-import sample.model.Book;
-import sample.model.Film;
-import sample.model.LogRecord;
-import sample.model.SystemUser;
+import sample.model.*;
 
 
 public class DBUtil {
@@ -166,9 +165,9 @@ public class DBUtil {
     public void getBooksData() throws SQLException{
 
         Statement query = con.createStatement();
-        String sql="select Books.id, title, A.surname, edition, year, P.name from Books\n" +
-                "join Authors A on Books.authorId = A.id\n" +
-                "join Publishers P on Books.publisherId = P.id";
+        String sql="select Books.id, title, A.surname, edition, year, P.name from Books \n" +
+                "join Authors A on Books.authorId = A.id \n" +
+                "join Publishers P on Books.publisherId = P.id \n";
         ResultSet queryResult= query.executeQuery(sql);
 
         int id, edition, year = 0;
@@ -190,9 +189,9 @@ public class DBUtil {
     public void getFilmsData() throws SQLException{
 
         Statement query = con.createStatement();
-        String sql="select Films.id, title, D.surname as director, year, G.genre as genre from Films\n" +
-                "join Directors D on Films.directorId = D.id\n" +
-                "join Genres G on Films.genreId = G.id";
+        String sql="select Films.id, title, D.surname as director, year, G.genre as genre from Films \n" +
+                "join Directors D on Films.directorId = D.id \n" +
+                "join Genres G on Films.genreId = G.id \n";
         ResultSet queryResult= query.executeQuery(sql);
 
         int id, year = 0;
@@ -210,4 +209,92 @@ public class DBUtil {
         }
     }
 
+
+//    USER PANEL FUNCTIONALITIES
+
+    public void searchItem(String srch, int itemType) throws SQLException{
+
+        Statement query = con.createStatement();
+        String sql="";
+
+        String title = "";
+
+        if(itemType == 1){
+
+            sql = "select Books.id, title, A.surname, edition, year, P.name from Books\n" +
+                    "join Authors A on Books.authorId = A.id\n" +
+                    "join Publishers P on Books.publisherId = P.id\n" +
+                    "  where title LIKE '%"+ srch +"%'";
+            int id, edition, year = 0;
+             String author, publisher = "";
+
+            ResultSet queryResult= query.executeQuery(sql);
+
+            while(queryResult.next()) {
+                title = (queryResult.getString(2));
+                searchBookResults.add(title);
+            }
+        }
+        else{
+
+            sql = "select Films.id, title, D.surname as director, year, G.genre as genre from Films\n" +
+                    "join Directors D on Films.directorId = D.id\n" +
+                    "join Genres G on Films.genreId = G.id\n" +
+                    "where title LIKE '%"+ srch +"%'";
+
+            int id, year = 0;
+            String director, genre = "";
+
+            ResultSet queryResult= query.executeQuery(sql);
+
+            while(queryResult.next()) {
+                title = (queryResult.getString(2));
+                searchFilmResults.add(title);
+            }
+
+        }
+
+    }
+
+    public void borrowItem(String itemTitle, int itemType) throws SQLException{
+
+        int itemId = 0;
+
+        for(int i = 0; i < booksData.size(); i++){
+            if (booksData.get(i).getTitle().equals(itemTitle)){
+                itemId = booksData.get(i).getId();
+            }
+        }
+
+        int userId = sessionUser.id;
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.now();
+
+
+        Statement query2 = con.createStatement();
+        String sql2="insert into BorrowedLogs values("+userId + ", "+itemId+", '"+date+ "', '"+date.plusDays(30)+"')";
+        query2.executeUpdate(sql2);
+    }
+
+    public void seeBorrowedProc() throws SQLException{
+
+        Statement query = con.createStatement();
+        String sql="exec seeBorrowed";
+        ResultSet results = query.executeQuery(sql);
+
+        int id = 0;
+        String title, author, dateStart, dateEnd = "";
+
+        while(results.next()){
+            id = results.getInt(1);
+            title = results.getString(2);
+            author = results.getString(3);
+            dateStart = results.getString(4);
+            dateEnd = results.getString(5);
+
+            borrowedItemsList.add(new BorrowedItem(id, title, author, dateStart, dateEnd));
+        }
+
+    }
 }

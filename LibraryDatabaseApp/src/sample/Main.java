@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.model.Book;
-import sample.model.Film;
-import sample.model.LogRecord;
-import sample.model.SystemUser;
+import sample.model.*;
 import sample.util.CredentialsUtil;
 import sample.util.DBUtil;
 import sample.util.FXMLSceneController;
@@ -27,12 +24,15 @@ public class Main extends Application {
     public static List<LogRecord> logInfo = new ArrayList<LogRecord>();
     public static List<Book> booksData = new ArrayList<Book>();
     public static List<Film> filmsData = new ArrayList<Film>();
+    public static List<BorrowedItem> borrowedItemsList = new ArrayList<BorrowedItem>();
 
-
+    public static List<String> searchBookResults = new ArrayList<String>();
+    public static List<String> searchFilmResults = new ArrayList<String>();
 
     public static DBUtil dbUtil = new DBUtil();
     public static CredentialsUtil cUtil = new CredentialsUtil();
     public static FXMLSceneController fxmlController = new FXMLSceneController();
+    public static SystemUser sessionUser;
 
 
     @Override

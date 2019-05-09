@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import sample.model.SystemUser;
 
 import static sample.Main.*;
 
@@ -33,6 +34,8 @@ public class LoginController {
             System.out.println(ANSI_GREEN + "SUCCESSFULLY LOGGED IN AS ADMIN" + ANSI_RESET);
             dbUtil.registerLogin(input_login.getText());
 
+
+
             fxmlController.changeScene(event, "adminPanel.fxml");
         }
         else if(authenticateLogin()&& accountType == 2){
@@ -58,6 +61,8 @@ public class LoginController {
         for(int i = 0; i < systemUsers.size(); i++) {
             if (login.equals(systemUsers.get(i).login) && passwd.equals(systemUsers.get(i).passwd)) {
 
+                sessionUser = new SystemUser(systemUsers.get(i).id,login, passwd, systemUsers.get(i).name,systemUsers.get(i).surname,systemUsers.get(i).accountTypeId);
+
                 accountType = systemUsers.get(i).accountTypeId;
                 return true;
 
@@ -65,7 +70,6 @@ public class LoginController {
         }
         return false;
     }
-
 
 }
 
