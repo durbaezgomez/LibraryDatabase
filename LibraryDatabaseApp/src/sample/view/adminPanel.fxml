@@ -3,22 +3,24 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF09C;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdminPanelController">
+<AnchorPane id="mainAnchor" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdminPanelController">
    <children>
-      <Text layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Panel" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="13.9296875">
+      <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Panel" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="10.9296875">
          <font>
             <Font size="28.0" />
          </font>
       </Text>
-      <Button layoutX="517.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
-      <Button layoutX="233.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addUserPanel" text="Add user" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="14.0" />
-      <Button layoutX="324.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteUserPanel" text="Delete user" />
-      <Button layoutX="422.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editUserPanel" text="Edit user" />
-      <TableView fx:id="logTable" layoutX="34.0" layoutY="63.0" prefHeight="290.0" prefWidth="528.0">
+      <Button id="button" layoutX="517.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
+      <Button id="button" layoutX="233.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addUserPanel" text="Add user" AnchorPane.leftAnchor="233.0" AnchorPane.topAnchor="14.0" />
+      <Button id="button" layoutX="324.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteUserPanel" text="Delete user" />
+      <Button id="button" layoutX="422.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editUserPanel" text="Edit user" />
+      <TableView id="table-view" fx:id="logTable" layoutX="34.0" layoutY="63.0" prefHeight="290.0" prefWidth="528.0">
         <columns>
           <TableColumn fx:id="logId" prefWidth="75.0" text="id" />
           <TableColumn fx:id="logDate" prefWidth="140.0" text="date" />
@@ -26,5 +28,10 @@
             <TableColumn fx:id="logUser" prefWidth="172.0" text="user" />
         </columns>
       </TableView>
+      <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/admin_icon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -10,26 +10,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF09C;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddUserPanelController">
+<AnchorPane id="mainAnchor" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddUserPanelController">
     <children>
-        <Text layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new user" AnchorPane.bottomAnchor="353.09375" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="339.62109375" AnchorPane.topAnchor="13.9296875">
+        <Text id="header" layoutX="29.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new user" AnchorPane.bottomAnchor="341.560546875" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="399.787109375" AnchorPane.topAnchor="30.439453125">
             <font>
                 <Font size="28.0" />
             </font>
         </Text>
-      <Button layoutX="294.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mainPanel" text="Back" AnchorPane.leftAnchor="294.0" AnchorPane.topAnchor="17.0" />
-      <TextField fx:id="new_login" layoutX="56.0" layoutY="109.0" promptText="login" />
+      <Button id="button" layoutX="294.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mainPanel" text="Back" AnchorPane.leftAnchor="294.0" AnchorPane.topAnchor="30.0" />
+      <TextField id="table-view" fx:id="new_login" layoutX="56.0" layoutY="109.0" promptText="login" />
       <RadioButton fx:id="admin_checked" layoutX="56.0" layoutY="290.0" mnemonicParsing="false" selected="true" text="Admin Account">
          <toggleGroup>
             <ToggleGroup fx:id="admin_user" />
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="user_checked" layoutX="56.0" layoutY="314.0" mnemonicParsing="false" selected="true" text="User Account" toggleGroup="$admin_user" />
-      <PasswordField fx:id="new_passwd" layoutX="56.0" layoutY="174.0" promptText="password" />
-      <PasswordField fx:id="r_passwd" layoutX="56.0" layoutY="241.0" promptText="repeat password" />
-      <TextField fx:id="new_name" layoutX="294.0" layoutY="109.0" promptText="name" />
-      <TextField fx:id="new_surname" layoutX="294.0" layoutY="172.0" promptText="surname" />
-      <Button fx:id="addUser" layoutX="294.0" layoutY="301.0" mnemonicParsing="false" onAction="#addNewUser" text="Add new user" />
+      <PasswordField id="table-view" fx:id="new_passwd" layoutX="56.0" layoutY="174.0" promptText="password" />
+      <PasswordField id="table-view" fx:id="r_passwd" layoutX="56.0" layoutY="241.0" promptText="repeat password" />
+      <TextField id="table-view" fx:id="new_name" layoutX="294.0" layoutY="109.0" promptText="name" />
+      <TextField id="table-view" fx:id="new_surname" layoutX="294.0" layoutY="172.0" promptText="surname" />
+      <Button id="button" fx:id="addUser" layoutX="294.0" layoutY="301.0" mnemonicParsing="false" onAction="#addNewUser" text="Add new user" />
       <Label fx:id="infoLabel" layoutX="294.0" layoutY="260.0" text=" " />
     </children>
 </AnchorPane>

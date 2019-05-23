@@ -11,23 +11,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF09C;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.SearchViewController">
+<AnchorPane id="mainAnchor" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.SearchViewController">
     <children>
-        <Text layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search item" AnchorPane.bottomAnchor="353.09375" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="339.62109375" AnchorPane.topAnchor="13.9296875">
+        <Text id="header" layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search item" AnchorPane.bottomAnchor="353.09375" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="339.62109375" AnchorPane.topAnchor="13.9296875">
             <font>
                 <Font size="28.0" />
             </font>
         </Text>
-        <Button layoutX="294.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#userPanel" text="Back" AnchorPane.leftAnchor="294.0" AnchorPane.topAnchor="17.0" />
+        <Button id="button" layoutX="504.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#userPanel" text="Back" AnchorPane.leftAnchor="504.0" AnchorPane.topAnchor="14.0" />
         <RadioButton fx:id="itemType" layoutX="211.0" layoutY="76.0" mnemonicParsing="false" selected="true" text="Book">
          <toggleGroup>
             <ToggleGroup fx:id="ite" />
          </toggleGroup>
         </RadioButton>
-        <Button fx:id="addUser" layoutX="343.0" layoutY="72.0" mnemonicParsing="false" onAction="#searchPhrase" text="Search" />
+        <Button id="button" fx:id="addUser" layoutX="287.0" layoutY="71.0" mnemonicParsing="false" onAction="#searchPhrase" text="Search" />
         <Label fx:id="infoLabel" layoutX="294.0" layoutY="260.0" text=" " />
-      <TextField fx:id="searchPhrase" layoutX="23.0" layoutY="71.0" promptText="title" />
-      <TableView fx:id="borrowedItemsTable" layoutX="23.0" layoutY="118.0" prefHeight="269.0" prefWidth="556.0">
+      <TextField id="table-view" fx:id="searchPhrase" layoutX="23.0" layoutY="71.0" promptText="title" />
+      <TableView id="table-view" fx:id="borrowedItemsTable" layoutX="23.0" layoutY="118.0" prefHeight="269.0" prefWidth="556.0">
         <columns>
           <TableColumn fx:id="idTab" prefWidth="38.0" text="id" />
           <TableColumn fx:id="titleTab" prefWidth="168.0" text="title" />

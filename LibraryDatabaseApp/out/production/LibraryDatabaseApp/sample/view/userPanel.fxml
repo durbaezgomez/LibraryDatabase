@@ -5,19 +5,21 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="background" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF09C;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.UserPanelController">
+<AnchorPane id="mainAnchor" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.UserPanelController">
     <children>
-        <Text layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Library System" AnchorPane.bottomAnchor="353.09375" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="367.89453125" AnchorPane.topAnchor="13.9296875">
+        <Text id="header" layoutX="30.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Panel" wrappingWidth="147.716796875" AnchorPane.bottomAnchor="356.09375" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="422.283203125" AnchorPane.topAnchor="11.0">
             <font>
                 <Font size="28.0" />
             </font>
         </Text>
-        <Button layoutX="517.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
-      <TabPane layoutX="30.0" layoutY="55.0" prefHeight="314.0" prefWidth="540.0" tabClosingPolicy="UNAVAILABLE">
+        <Button id="button" layoutX="517.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
+      <TabPane id="table-view" layoutX="30.0" layoutY="55.0" prefHeight="314.0" prefWidth="540.0" stylesheets="@styles.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Books">
             <content>
@@ -56,7 +58,12 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="serach" layoutX="252.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToSearchView" text="Search" />
+      <Button id="button" fx:id="serach" layoutX="252.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToSearchView" text="Search" />
+      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="178.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/user_icon.png" />
+         </image>
+      </ImageView>
       <!--<Button layoutX="326.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToBorrowView" text="Borrow" />-->
       <!--<Button layoutX="396.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToSeeBorrowedView" text="See Borrowed" />-->
     </children>
