@@ -20,7 +20,6 @@ This repository is my university project for the Database Applications Course. I
 - [x] model classes for data access, management and storage
 - [x] define next user functionalities (show database content for user, filter data by sending personalised query)
 - [x] define next admin functionalities (manage & update database users)
-- [ ] define next admin functionalities (manage & update database items, alter entities)
 - [x] define next admin functionalities (manage updating borrowedLogs entity)
 
 ### MVP: 
@@ -29,10 +28,6 @@ This repository is my university project for the Database Applications Course. I
 - [x] admin and user accounts existing, able to perform previously mentioned tasks
 - [x] design GUI
 
-### Final Product:
-- [ ] added functionality for the user to create and delete own account
-- [ ] debug, test all functionalities
-
-### Additional improvements:
-- [ ] user password hashing
-- [ ] 2-step admin authentication when trying to overwrite the database
+### Possible future improvements:
+- user password hashing
+- 2-step admin authentication when trying to overwrite the database
